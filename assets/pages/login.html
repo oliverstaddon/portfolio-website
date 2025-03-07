@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Oliver Staddon | Blog</title>
+    <title>Oliver Staddon | Login</title>
 
     <link rel="stylesheet" href="../style/reset.css">
     <link rel="stylesheet" href="../style/style.css">
@@ -35,12 +35,17 @@
     </header>
 
     <main>
-        <section class="blog-page" id="blog">
-            <div class="blog-container">
-                <h2 class="heading-content">Blog</h2>
-                <span class="heading-content-sub">Keep up to date with my life and what I do</span>
-
-            </div>
+        <section class="login-box">
+            <h3 class="postLogin-box-header">Login</h3>
+            <form action="login.php" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
         </section>
 
         <section class="center-img">

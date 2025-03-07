@@ -22,7 +22,14 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="/assets/pages/projects.html">Projects</a></li>
-                <li><a href="/assets/pages/blog.html">Blog</a></li>
+                <li class="dropdown">
+                    <a href="/assets/pages/blog.html">Blog</a>
+                    <div class="dropdown-content">
+                        <a href="/assets/pages/login.html">Login</a>
+                        <a href="/assets/pages/addPost.html">Post</a>
+                    </div>
+                    <li><a href="#contact">Contact</a></li>
+                </li>
             </ul>
         </nav>
     </header>
@@ -51,6 +58,10 @@
                              In my free time, I like to explore new technologies and work on personal projects to enhance
                              my skills. I am an avid player of the piano and enjoy playing tennis.
                         </p>
+                        <figure>
+                            <img src="assets/imgs/kyubey.gif" alt="Oliver Staddon">
+                            <figcaption>This is not me</figcaption>
+                        </figure>
                     </div>
 
                     <div class="content-info-right">
@@ -170,7 +181,7 @@
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <a href="https://www.linkedin.com/in/oliverstaddon/" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 310 310">
                 <path d="

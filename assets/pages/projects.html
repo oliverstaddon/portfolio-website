@@ -18,11 +18,18 @@
 <body>
     <header>
         <nav class="navbar">
-            <a href="index.html" class="logo">Oliver</a>
+            <a href="../../index.html" class="logo">Oliver</a>
             <ul class="nav-links">
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li class="dropdown">
+                    <a href="blog.html">Blog</a>
+                    <div class="dropdown-content">
+                        <a href="login.html">Login</a>
+                        <a href="addPost.html">Post</a>
+                    </div>
+                </li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -104,7 +111,7 @@
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <a href="https://www.linkedin.com/in/oliverstaddon/" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 310 310">
                 <path d="

@@ -116,6 +116,33 @@ p {
 .navbar a:hover {
     color: var(--red);
 }
+
+
+.nav-links .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-links .dropdown-content {
+    display: none; /* hide typically content */
+    position: absolute; /* below blog (parent) */
+    z-index: 1;
+}
+
+.nav-links .dropdown-content a {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.nav-links .dropdown-content a:hover {
+    color: var(--red);
+}
+
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
 /* ----------- */
 
 
@@ -274,6 +301,20 @@ p {
     margin-bottom: var(--h3-bottom-margin);
 }
 
+.content-info-left figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.content-info-left figcaption {
+    position: absolute;
+    right: 8%;
+    text-align: right;
+}
+
 .content-info-right {
     margin: 0;
     padding: 0;
@@ -412,27 +453,6 @@ p {
 /* ----------- */
 
 
-/* Blog Section */
-.blog-page {
-    position: relative;
-    padding-top: 5rem;
-}
-
-.blog-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1.25rem;
-}
-
-.heading-projects {
-    font-size: var(--font-size-large);
-    text-align: center;
-    margin-top: 3.125rem;
-}
-
-
 /* Timeline */
 .timeline {
     position: relative;
@@ -520,6 +540,143 @@ p {
 }
 /* ----------- */
 
+/* Blog Section */
+.blog-page {
+    position: relative;
+    padding-top: 5rem;
+}
+
+.blog-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.25rem;
+}
+
+.heading-projects {
+    font-size: var(--font-size-large);
+    text-align: center;
+    margin-top: 3.125rem;
+}
+
+/* Login */
+.login-box {
+    background-color: var(--bgDark);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin: 15rem auto;
+    width: 20%;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box label {
+    margin-bottom: 0.5rem;
+    font-size: var(--font-size-medium);
+}
+
+.login-box input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: var(--font-size-medium);
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--body);
+}
+
+.login-box button {
+    font-family: var(--body);
+    background-color: var(--red);
+    color: var(--white);
+    font-size: var(--font-size-medium);
+    padding: 0.75rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.login-box button:hover {
+    background-color: var(--darkRed);
+}
+/* ----------- */
+
+.postLogin-box-header {
+    font-size: var(--font-size-large);
+    text-align: center;
+    margin-bottom: 1.25rem;
+    margin-top: 0; /* remove default margin */
+}
+
+/* Add post */
+.post-box {
+    background-color: var(--bgDark);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin: 15rem auto;
+    width: 20%;
+}
+
+.post-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-box label {
+    margin-bottom: 0.5rem;
+    font-size: var(--font-size-medium);
+}
+
+.post-box input {
+    font-family: var(--body);
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: var(--font-size-medium);
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+.post-box-button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-box button {
+    font-family: var(--body);
+    width: 40%;
+    justify-content: center;
+    background-color: var(--red);
+    color: var(--white);
+    font-size: var(--font-size-medium);
+    padding: 0.75rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.post-box button:hover {
+    background-color: var(--darkRed);
+}
+
+.post-box textarea {
+    font-family: var(--body);
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: var(--font-size-small);
+    border: none;
+    border-radius: var(--border-radius);
+    min-height: 5rem;
+    max-height: 15rem;
+    resize: vertical; /* allow only vertical resizing */
+}
+/* ----------- */
+
+
 
 /* Star */
 .star {
@@ -555,10 +712,7 @@ p {
     justify-content: center;
     align-items: center;
     margin-top: 10%;
-    text-align: center;
 }
-
-
 
 @media (max-width: 768px) {
     .timeline-year-label {
