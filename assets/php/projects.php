@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include('connect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +15,7 @@
     <link rel="stylesheet" href="../style/style.css">
 
     <script src="../scripts/stars.js"></script>
+    <script src="../scripts/loginStatus.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Josefin+Sans&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
@@ -18,14 +24,14 @@
 <body>
     <header>
         <nav class="navbar">
-            <a href="../php/index.php" class="logo">Oliver</a>
+            <a href="./index.php" class="logo">Oliver</a>
             <ul class="nav-links">
-                <li><a href="../php/index.php">Home</a></li>
-                <li><a href="./projects.html">Projects</a></li>
+                <li><a href="./index.php">Home</a></li>
+                <li><a href="./projects.php">Projects</a></li>
                 <li class="dropdown">
-                    <a href="../php/viewBlog.php">Blog</a>
+                    <a href="./viewBlog.php">Blog</a>
                     <div class="dropdown-content" id="blog-dropdown">
-                        <a href="./login.html">Login</a>
+                        <a href="../pages/login.html">Login</a>
                     </div>
                 </li>
                 <li><a href="#contact">Contact</a></li>

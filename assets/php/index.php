@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include('connect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +11,11 @@
     
     <title>Oliver Staddon | Home</title>
 
-    <link rel="stylesheet" href="assets/style/reset.css">
-    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/style.css">
 
-    <script src="assets/scripts/stars.js"></script> 
+    <script src="../scripts/stars.js"></script> 
+    <script src="../scripts/loginStatus.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Josefin+Sans&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
@@ -18,14 +24,14 @@
 <body>
     <header>
         <nav class="navbar">
-            <a href="index.html" class="logo">Oliver</a>
+            <a href="./index.php" class="logo">Oliver</a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="./assets/pages/projects.html">Projects</a></li>
+                <li><a href="./index.php">Home</a></li>
+                <li><a href="./projects.php">Projects</a></li>
                 <li class="dropdown">
-                    <a href="./assets/php/viewBlog.php">Blog</a>
-                    <div class="dropdown-content">
-                        <a href="./assets/pages/login.html">Login</a>
+                    <a href="./viewBlog.php">Blog</a>
+                    <div class="dropdown-content" id="blog-dropdown">
+                        <a href="../pages/login.html">Login</a>
                     </div>
                     <li><a href="#contact">Contact</a></li>
                 </li>
@@ -60,7 +66,7 @@
                             new favorites.
                         </p>
                         <figure>
-                            <img src="assets/imgs/miku.gif" alt="Oliver Staddon" width="150" height="150">
+                            <img src="../imgs/miku.gif" alt="Oliver Staddon" width="150" height="150">
                             <figcaption>This is not me</figcaption>
                         </figure>
                     </div>
@@ -70,15 +76,16 @@
                         <div class="skills-box">
                             <table class="skills-table">
                                 <tr>
-                                    <td><img src="assets/imgs/svgs/C_sharp.svg" alt="C#"></td>
-                                    <td><img src="assets/imgs/svgs/C++.svg" alt="C++"></td>
-                                    <td><img src="assets/imgs/svgs/java.svg" alt="Java"></td>
-                                    <td><img src="assets/imgs/svgs/python.svg" alt="Python"></td>
+                                    <td><img src="../imgs/svgs/C_sharp.svg" alt="C#"></td>
+                                    <td><img src="../imgs/svgs/C++.svg" alt="C++"></td>
+                                    <td><img src="../imgs/svgs/java.svg" alt="Java"></td>
+                                    <td><img src="../imgs/svgs/python.svg" alt="Python"></td>
                                 </tr>
                                 <tr>
-                                    <td><img src="assets/imgs/svgs/HTML5.svg" alt="HTML5"></td>
-                                    <td><img src="assets/imgs/svgs/css3.svg" alt="CSS3"></td>
-                                    <td><img src="assets/imgs/svgs/javaScript.svg" alt="JavaScript"></td>
+                                    <td><img src="../imgs/svgs/HTML5.svg" alt="HTML5"></td>
+                                    <td><img src="../imgs/svgs/css3.svg" alt="CSS3"></td>
+                                    <td><img src="../imgs/svgs/javaScript.svg" alt="JavaScript"></td>
+                                    <td><img src="../imgs/svgs/php.png" alt="php"></td>
                                 </tr>
                             </table>
                         </div>
@@ -157,13 +164,13 @@
                                 <tr>
                                     <td>
                                         <div class="education-section">
-                                            <img src="assets/imgs/QMUL.jpg" alt="QMUL">   
+                                            <img src="../imgs/QMUL.jpg" alt="QMUL">   
                                             <div class="education-description">QMUL | BSc Computer Science (Current)</div>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="education-section">
-                                            <img src="assets/imgs/NKS.jpg" alt="NKS">
+                                            <img src="../imgs/NKS.jpg" alt="NKS">
                                             <div class="education-description">The Norton Knatchbull School | 10 GCSEs, 3 A levels & EPQ</div>
                                         </div>
                                     </td>
@@ -178,7 +185,7 @@
         </section>
 
         <section class="center-img">
-            <img src="assets/imgs/kyubey.gif" width="125" height="125" alt="Kyubey">
+            <img src="../imgs/kyubey.gif" width="125" height="125" alt="Kyubey">
         </section>
     </main>
 

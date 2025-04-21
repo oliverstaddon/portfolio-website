@@ -1,15 +1,26 @@
+<?php
+session_start();
+if(!isset($_SESSION['loggedin'])){
+    header('Location: assets/pages/login.html');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Oliver Staddon | Login</title>
+    <title>Oliver Staddon | Add Post</title>
 
     <link rel="stylesheet" href="../style/reset.css">
     <link rel="stylesheet" href="../style/style.css">
 
     <script src="../scripts/stars.js"></script> 
+    <script src="../scripts/addPost.js"></script>
+    <script src="../scripts/loginStatus.js"></script>
+    <script src="../scripts/previewPost.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Josefin+Sans&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
@@ -18,14 +29,14 @@
 <body>
     <header>
         <nav class="navbar">
-            <a href="../php/index.php" class="logo">Oliver</a>
+            <a href="./index.php" class="logo">Oliver</a>
             <ul class="nav-links">
-                <li><a href="../php/index.php">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="./index.php">Home</a></li>
+                <li><a href="./projects.php">Projects</a></li>
                 <li class="dropdown">
-                    <a href="../php/viewBlog.php">Blog</a>
+                    <a href="./viewBlog.php">Blog</a>
                     <div class="dropdown-content" id="blog-dropdown">
-                        <a href="login.html">Login</a>
+                        <a href="../pages/login.html">Login</a>
                     </div>
                 </li>
                 <li><a href="#contact">Contact</a></li>
@@ -34,18 +45,36 @@
     </header>
 
     <main>
-        <section class="login-box">
-            <h3 class="postLogin-box-header">Login</h3>
-            <form action="../php/login.php" method="post">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+        <section class="post-box">
+            <h3 class="postLogin-box-header">Create Post</h3>
+            <form action="addPost.php" method="post">
+                <input type="text" id="title" name="title" placeholder="Title" required>
                 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <textarea id="content" name="content" placeholder="Blog content here" required></textarea>
                 
-                <button type="submit">Login</button>
+                <div class="post-box-button-container">
+                    <button type="submit">Post</button>
+                    <button type="button">Preview</button>
+                    <button type="reset">Clear</button>
+                </div>
             </form>
         </section>
+
+        <aside class="modal" id="preview-modal" >
+            <div class="modal-content">
+                <h3 id="preview-header">Post Preview</h3>
+                <div class="blog-entry" id="preview-blog-entry">
+                    <div class="blog-entry-header">
+                        <span id="preview-title"></span>
+                    </div>
+                    <div class="blog-entry-content" id="preview-entry-content"></div> <!-- content will go here -->
+                </div>
+                <div class="modal-buttons">
+                    <button id="confirm-post">Post</button>
+                    <button id="close-modal">Edit</button>
+                </div>
+            </div>
+        </aside>
 
         <section class="center-img">
             <img src="../imgs/kyubey.gif" width="125" height="125" alt="Kyubey">
